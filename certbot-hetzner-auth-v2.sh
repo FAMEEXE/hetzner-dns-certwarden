@@ -18,10 +18,5 @@ curl \
         -d "{\"name\":\"${name}\",\"type\":\"TXT\",\"ttl\":300,\"records\":[{\"value\": \"\\\"${CERTBOT_VALIDATION}\\\"\",\"comment\":\"Created by certbot, do not edit\"}]}" \
         "https://api.hetzner.cloud/v1/zones/${zone_id}/rrsets"
 
-#curl -X "POST" "https://dns.hetzner.com/api/v1/records" \
-#     -H 'Content-Type: application/json' \
-#     -H "Authorization: Bearer ${HETZNER_TOKEN}" \
-#     -d "{ \"value\": \"${CERTBOT_VALIDATION}\", \"ttl\": 300, \"type\": \"TXT\", \"name\": \"${CERTBOT_DOMAIN}.\", \"zone_id\": \"${zone_id}\" }" > /dev/null 2>/dev/null
-
 # just make sure we sleep for a while (this should be a dig poll loop)
 sleep 30
