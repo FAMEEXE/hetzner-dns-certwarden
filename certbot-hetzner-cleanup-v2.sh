@@ -1,3 +1,6 @@
+#!/bin/bash
+
+CERTBOT_DOMAIN=$1
 
 search_name=$( echo $CERTBOT_DOMAIN | rev | cut -d'.' -f 1,2 | rev)
 zone=$(curl \
